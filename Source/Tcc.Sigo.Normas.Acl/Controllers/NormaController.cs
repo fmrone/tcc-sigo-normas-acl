@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using Tcc.Sigo.Normas.Acl.Attributes;
 using Tcc.Sigo.Normas.Acl.Models;
 using Tcc.Sigo.Normas.Acl.Repository;
 
@@ -25,6 +26,7 @@ namespace Tcc.Sigo.Normas.Acl.Controllers
         }
 
         [HttpGet]
+        [ApiKey]
         public async Task<IActionResult> Get()
         {
             try
@@ -44,6 +46,7 @@ namespace Tcc.Sigo.Normas.Acl.Controllers
         }
 
         [HttpPost]
+        [ApiKey]
         public async Task<IActionResult> Post([FromBody][Required] NormaMessageModel normaMessageModel)
         {
             try
